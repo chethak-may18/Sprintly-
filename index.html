@@ -5,5 +5,23 @@
 </head>
 <body>
   <h1>Sprintly MVP</h1>
+
+  <button onclick="login()">Login with Google</button>
+
+  <script type="module">
+    import { auth, provider, signInWithPopup } from "./src/firebase.js";
+
+    async function login() {
+      try {
+        const result = await signInWithPopup(auth, provider);
+        alert("Logged in as: " + result.user.email);
+      } catch (error) {
+        console.error(error);
+        alert(error.message);
+      }
+    }
+
+    window.login = login;
+  </script>
 </body>
 </html>
