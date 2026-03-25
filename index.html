@@ -4,24 +4,14 @@
   <title>Sprintly</title>
 </head>
 <body>
-  <h1>Sprintly MVP</h1>
 
-  <button onclick="login()">Login with Google</button>
+  <h1>Sprintly</h1>
 
-  <script type="module">
-    import { auth, provider, signInWithPopup } from "./src/firebase.js";
+  <button id="login-btn">Login with Google</button>
 
-    async function login() {
-      try {
-        const result = await signInWithPopup(auth, provider);
-        alert("Logged in as: " + result.user.email);
-      } catch (error) {
-        console.error(error);
-        alert(error.message);
-      }
-    }
+  <div id="user-box"></div>
 
-    window.login = login;
-  </script>
+  <script type="module" src="/src/main.js"></script>
+
 </body>
 </html>
